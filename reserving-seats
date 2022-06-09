@@ -1,1 +1,206 @@
 
+#include <iostream>
+#include<array>
+#include<iomanip>
+
+
+using namespace std;
+
+int main() {
+    char numbers[8][9];
+    array <char,8> a={'A','B','C','D','E','F','G','H'};
+    int ntk,r,g,t;
+    //int co,h;
+   // char re[8][9];
+    char tp[8][9];
+    //int txi[8];
+   // int txj[9];
+    //int b,f;
+    char l='R',v;
+    //int c=1;
+    cout<<"                 WELCOME TO SIMPLON THEATER         "<<endl;
+    cout<<endl;
+    cout<<endl;
+    //co=1;
+
+    // PRINTING THE SEAT FORMAT
+
+  cout << "THE SEAT ARRANGEMENTS LOOKS LIKE " << endl;
+  cout<<"\t";
+
+    for(int k=0;k<9;k++)
+    {
+        cout<<setw(7)<<"  S.NO["<<k+1<<"] ";
+    }
+     cout<<endl;
+     for(int z= 0;z<35;z++)
+     {
+       cout<<" _ ";
+     }
+cout<<endl;
+ for (int i = 1; i <= 8; i++)
+        {
+            cout<<"row["<<a.at(i-1)<<"]"<<"|";
+        for (int j = 1; j <= 9; j++)
+         {
+             numbers[i][j]='-';
+             cout<<setw(8)<<"["<<numbers[i][j]<<"]";
+            }
+cout<<"\n";
+        }
+
+
+
+   g: cout<<"enter the number of tickets you needed:";
+    cin>>ntk;
+   t:cout<<"\n enter the row(1-8) to be reserved:";
+    cin>>r;
+    cout<<endl;
+    cout<<endl;
+      for (int i = 1; i <= 8; i++)
+        {
+        for (int j = 1; j <= 9; j++)
+         {
+          if((i==r)&&(j<=ntk))
+                {
+              numbers[i][j]=l;
+                tp[i][j]=numbers[i][j];
+                }
+                else{
+             numbers[i][j]='-';
+
+            }
+
+        }
+
+
+
+    }
+   // cout<<"the l value is :"<<l;
+
+
+    // allocating the seats in the array
+   // f:
+/*
+for (int i = 1; i <= 8; i++)
+        {
+
+        for (int j = 1; j <= 9; j++)
+         {
+             if(i>r)
+                {
+                    cout<<"enter rows within 8"<<endl;
+                    goto t;
+                }
+                if(j>ntk)
+                {
+                   cout<<"enter tickets within 9 in each rows"<<endl;
+                    goto g;
+                }
+         }
+        }
+*/
+   // txj[j]= ntk;
+
+           // if((i==r)&&(j<=ntk))
+                //if(tp[i][j]== txi[i],txj[j])
+            //{
+          /*  if((tp[i][j]==l)&&(i==r)&&(j<=ntk))
+            {
+                j++;
+
+
+                //numbers[i++][j++];
+               //
+
+                 numbers[i][j]=l;
+                tp[i][j]=numbers[i][j];
+                if(co>ntk)
+                {
+                  numbers[i][j]='-';
+                }
+                co++;
+
+
+                }*/
+
+                   //if(((tp[i][j])!=l)&&(i==r)&&(j<=ntk))
+
+
+                //if(co>ntk)
+                //{
+
+                  //numbers[i][j]='-';
+                  //co++;
+               // }
+               /* else{
+                    numbers[i][j]='-';
+                tp[i][j]=numbers[i][j];
+
+                co++;*/
+                //}
+
+                //numbers[i][j]=0;
+
+
+
+           // }
+
+
+
+
+                //numbers[i][j]=;
+
+            //}
+
+
+
+    //  Printing array elements
+   cout<< "\nTHE SEAT ARRANGEMENTS AFTER BOOKING LOOKS LIKE "<<endl;
+   cout<<"\t";
+    for(int k=0;k<9;k++)
+    {
+        cout<< setw(7) <<"  S.NO["<<k+1<<"] ";
+    }
+     cout<<endl;
+     for(int z= 0;z<35;z++)
+     {
+       cout<<" _ ";
+     }
+cout<<endl;
+
+
+    for (int i = 1; i <= 8; i++) {
+            cout<<"row["<<a.at(i-1)<<"]"<<"|";
+        for (int j = 1; j <= 9; j++) {
+                 if((tp[i][j])==l)
+                            {
+                        cout<<setw(8)<<"["<<tp[i][j]<<"]";
+                        //re[i][j]=tp[i][j];
+                        //cout<<"re value=="<<re[r][ntk]<<endl;
+
+
+            }
+            else{
+                numbers[i][j]='-';
+             cout<<setw(8)<<"["<<numbers[i][j]<<"]";
+            }
+        }
+        cout<<"\n";
+    }
+    cout<<"YOUR TICKET HAS BEEN RESERVED\n";
+cout<<"DO YOU NEED TICKETS TO BE RESERVED(y/n):";
+    cin>>v;
+    if((v =='y')||(v =='Y'))
+{
+
+    goto g;
+}
+else{
+cout<<"Thankyou and Have a nice day!";
+ goto ex;
+}
+
+
+   ex: return 0;
+}
